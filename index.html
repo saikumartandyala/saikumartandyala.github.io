@@ -2,23 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sai Kumar Tandyala | Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box}
 
-/* ================= BODY & BACKGROUND ================= */
-
+/* ================= BODY ================= */
 body{
     font-family:'Poppins',sans-serif;
-    color:#ffffff;
+    color:#fff;
     overflow-x:hidden;
     background:
         radial-gradient(circle at top left, rgba(139,92,246,0.25), transparent 45%),
@@ -26,8 +22,7 @@ body{
         #0b0616;
 }
 
-/* ================= DECORATIVE BACKGROUND ================= */
-
+/* ================= BACKGROUND ELEMENTS ================= */
 .bg-blob{
     position:absolute;
     width:420px;
@@ -36,8 +31,8 @@ body{
     filter:blur(90px);
     z-index:0;
 }
-.blob-1{top:-120px;left:-120px;}
-.blob-2{top:80px;right:-150px;}
+.blob-1{top:-120px;left:-120px}
+.blob-2{top:80px;right:-150px}
 
 .dot-cluster{
     position:absolute;
@@ -48,68 +43,55 @@ body{
     opacity:0.55;
     filter:blur(0.3px);
     z-index:1;
+    animation:floatDots 14s ease-in-out infinite;
 }
-.dots-1{top:220px;left:120px;}
-.dots-2{top:300px;right:180px;}
+.dots-1{top:220px;left:120px}
+.dots-2{top:300px;right:180px;animation-delay:4s}
+
+@keyframes floatDots{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-12px)}
+    100%{transform:translateY(0)}
+}
 
 /* ================= NAVBAR ================= */
-
 header{
-    padding:24px 80px;
+    padding:22px 80px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     position:relative;
     z-index:3;
 }
-
-.logo{
-    font-size:22px;
-    font-weight:600;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:32px;
-    align-items:center;
-}
-
+.logo{font-size:22px;font-weight:600}
+nav ul{list-style:none;display:flex;gap:32px}
 nav a{
-    text-decoration:none;
     color:#cfcfe3;
+    text-decoration:none;
     font-size:14px;
     padding:6px 12px;
     border-radius:6px;
 }
-
-nav a.active{
-    border:1px solid #8b5cf6;
-    color:#ffffff;
-}
-
+nav a.active{border:1px solid #8b5cf6;color:#fff}
 .contact-btn{
     background:#8b5cf6;
     padding:8px 18px;
     border-radius:20px;
-    color:#ffffff!important;
+    color:#fff!important;
 }
 
-/* ================= HERO SECTION ================= */
-
+/* ================= HERO ================= */
 .hero{
     position:relative;
     z-index:2;
     display:grid;
     grid-template-columns:1.05fr 1fr;
     align-items:center;
-    padding:120px 80px 110px; /* reduced spacing */
+    padding:120px 80px 110px;
     gap:100px;
 }
 
-.hero-content{
-    max-width:460px; /* cleaner text width */
-}
+.hero-content{max-width:460px}
 
 .hero span{
     display:inline-block;
@@ -139,127 +121,115 @@ nav a.active{
     color:#d1d5db;
 }
 
-.highlight{
-    color:#c4b5fd;
-    font-weight:600;
-}
+.highlight{color:#c4b5fd;font-weight:600}
 
-/* ================= BUTTONS ================= */
-
+/* Buttons */
 .buttons{
     display:flex;
     gap:24px;
     margin-top:42px;
 }
-
 .buttons a{
-    text-decoration:none;
     padding:14px 30px;
     border-radius:30px;
+    text-decoration:none;
     transition:0.4s ease;
 }
-
-.btn-primary{
-    background:#8b5cf6;
-    color:#ffffff;
-}
-
-.btn-secondary{
-    border:1px solid #6b7280;
-    color:#ffffff;
-}
-
-.buttons a:hover{
-    transform:translateY(-4px);
-    box-shadow:0 16px 40px rgba(139,92,246,0.35);
-}
+.btn-primary{background:#8b5cf6;color:#fff}
+.btn-secondary{border:1px solid #6b7280;color:#fff}
 
 /* ================= HERO IMAGE ================= */
-
 .hero-image{
     position:relative;
-    margin-top:10px; /* reduced gap */
+    margin-top:10px;
+    transition:transform .6s cubic-bezier(.22,1,.36,1);
 }
-
 .hero-image img{
     width:380px;
     height:500px;
     object-fit:cover;
     border-radius:24px;
-    animation:float 7s ease-in-out infinite;
     box-shadow:0 50px 90px rgba(0,0,0,0.6);
+    animation:floatImage 7s ease-in-out infinite;
 }
 
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-16px);}
-    100%{transform:translateY(0);}
+@keyframes floatImage{
+    0%{transform:translateY(0)}
+    50%{transform:translateY(-16px)}
+    100%{transform:translateY(0)}
 }
 
-/* ================= FOOTER (UNCHANGED) ================= */
-
+/* ================= FOOTER ================= */
 .footer{
     background:radial-gradient(circle at top left,#2b0a3d,#0b0616);
     padding:60px 40px 30px;
 }
 
-.footer-container{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:40px;
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 900px){
+
+    header{
+        padding:18px 24px;
+    }
+
+    nav ul{
+        gap:16px;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        padding:90px 24px 80px;
+        gap:60px;
+        text-align:center;
+    }
+
+    .hero-content{
+        max-width:100%;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .buttons{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .hero-image img{
+        width:280px;
+        height:380px;
+    }
+
+    /* Reduce background clutter on mobile */
+    .blob-2,
+    .dots-2{
+        display:none;
+    }
+
+    .dots-1{
+        top:140px;
+        left:50%;
+        transform:translateX(-50%);
+    }
 }
 
-.footer h3{
-    margin-bottom:15px;
-}
-
-.footer p{
-    color:#b6b6c3;
-    font-size:14px;
-}
-
-.footer-contact p{
-    display:flex;
-    gap:10px;
-    margin-bottom:10px;
-}
-
-.footer-contact i{
-    color:#a855f7;
-}
-
-.social-icons{
-    display:flex;
-    gap:15px;
-}
-
-.social-icons a{
-    width:42px;
-    height:42px;
-    background:#1a1028;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#c4b5fd;
-}
-
-.footer-bottom{
-    border-top:1px solid #241133;
-    margin-top:40px;
-    padding-top:20px;
-    text-align:center;
-    color:#8b8ba7;
-    font-size:13px;
+/* Disable mouse parallax on touch devices */
+@media (hover:none){
+    .hero-image{
+        transform:none!important;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Decorative Background -->
+<!-- Background -->
 <div class="bg-blob blob-1"></div>
 <div class="bg-blob blob-2"></div>
 <div class="dot-cluster dots-1"></div>
@@ -298,7 +268,7 @@ nav a.active{
         </div>
     </div>
 
-    <div class="hero-image">
+    <div class="hero-image" id="heroImage">
         <img src="profile.jpg" alt="Sai Kumar">
     </div>
 </section>
@@ -309,29 +279,20 @@ nav a.active{
             <h3>Sai Kumar Tandyala</h3>
             <p>Data Analyst specializing in SQL, Power BI, Tableau.</p>
         </div>
-
-        <div class="footer-contact">
-            <h3>Contact</h3>
-            <p><i class="fa-solid fa-envelope"></i> your@email.com</p>
-            <p><i class="fa-solid fa-phone"></i> +91 XXXXXXXXXX</p>
-            <p><i class="fa-solid fa-location-dot"></i> India</p>
-        </div>
-
-        <div>
-            <h3>Connect</h3>
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-solid fa-envelope"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        © 2025 Sai Kumar Tandyala. All rights reserved.
     </div>
 </footer>
+
+<!-- Mouse Parallax (desktop only) -->
+<script>
+if(window.matchMedia("(hover: hover)").matches){
+    const heroImage=document.getElementById("heroImage");
+    document.addEventListener("mousemove",e=>{
+        const x=(window.innerWidth/2-e.clientX)/40;
+        const y=(window.innerHeight/2-e.clientY)/40;
+        heroImage.style.transform=`translate(${x}px,${y}px)`;
+    });
+}
+</script>
 
 </body>
 </html>
