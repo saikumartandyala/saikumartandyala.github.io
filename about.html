@@ -9,15 +9,17 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+
 body{
     font-family:'Poppins',sans-serif;
     background:radial-gradient(circle at top left,#2b0a3d,#0b0616);
     color:#fff;
     animation:fadeIn .6s ease;
 }
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
 body.page-exit{opacity:0;transition:.3s}
 
+/* NAV */
 header{padding:20px 60px;display:flex;justify-content:space-between;align-items:center}
 .logo{font-size:22px;font-weight:600}
 nav ul{list-style:none;display:flex;gap:30px}
@@ -25,11 +27,25 @@ nav a{color:#cfcfe3;text-decoration:none;font-size:14px;padding:6px 12px;border-
 nav a.active{border:1px solid #8b5cf6;color:#fff}
 .contact-btn{background:#8b5cf6;border-radius:20px;padding:8px 18px;color:#fff!important}
 
+/* HIGHLIGHT */
 .highlight{color:#c4b5fd;font-weight:600}
 
-.fade-up{animation:fadeUp .8s ease}
-@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1}}
+/* REVEAL SYSTEM */
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all .7s ease;
+}
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+.delay-4{transition-delay:.4s}
 
+/* ABOUT */
 .about-wrapper{
     padding:70px 20px 40px;
     max-width:900px;
@@ -39,6 +55,7 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
 .about-wrapper h1{font-size:42px;margin-bottom:20px}
 .about-wrapper p{color:#d1d5db;line-height:1.8}
 
+/* DOWNLOAD */
 .download-btn{
     display:inline-block;
     margin-top:30px;
@@ -47,10 +64,14 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
     border-radius:30px;
     color:#fff;
     text-decoration:none;
-    transition:.3s;
+    transition:.35s;
 }
-.download-btn:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(139,92,246,.35)}
+.download-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(139,92,246,.35);
+}
 
+/* SKILLS */
 .skills{
     padding:30px 60px 60px;
     text-align:center;
@@ -65,10 +86,14 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
     background:linear-gradient(180deg,#2a145a,#160b2f);
     padding:30px;
     border-radius:15px;
-    transition:.3s;
+    transition:.35s;
 }
-.skill-card:hover{transform:translateY(-6px);box-shadow:0 15px 30px rgba(0,0,0,.35)}
+.skill-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(0,0,0,.35);
+}
 
+/* FOOTER (SAME AS HOME) */
 .footer{background:radial-gradient(circle at top left,#2b0a3d,#0b0616);padding:60px 40px 30px}
 .footer-container{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
 .footer h3{margin-bottom:15px}
@@ -95,31 +120,32 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
 </nav>
 </header>
 
-<section class="about-wrapper fade-up">
-<h1>About Me</h1>
-<p>
+<section class="about-wrapper">
+<h1 class="reveal delay-1">About Me</h1>
+<p class="reveal delay-2">
 I am a <span class="highlight">management student</span> with strong experience as a
 <span class="highlight">Business Process Analyst</span> in transaction monitoring,
 team management, and escalation handling.
 <br><br>
-Skilled in <span class="highlight">SQL, Power BI, Excel</span> for generating
+Skilled in <span class="highlight">SQL, Power BI, and Excel</span> for generating
 actionable insights and supporting management decisions.
 </p>
 
-<a href="Sai_Kumar_Tandyala_Resume.pdf" class="download-btn" download>
+<a href="Sai_Kumar_Tandyala_Resume.pdf" class="download-btn reveal delay-3" download>
 Download CV
 </a>
 </section>
 
-<section class="skills fade-up">
-<h2>My Skills</h2>
+<section class="skills">
+<h2 class="reveal delay-1">My Skills</h2>
+
 <div class="skill-grid">
-<div class="skill-card">SQL & Databases</div>
-<div class="skill-card">Power BI & Tableau</div>
-<div class="skill-card">Excel & Reporting</div>
-<div class="skill-card">Transaction Monitoring</div>
-<div class="skill-card">Team Management</div>
-<div class="skill-card">Escalation Handling</div>
+<div class="skill-card reveal delay-1">SQL & Databases</div>
+<div class="skill-card reveal delay-2">Power BI & Tableau</div>
+<div class="skill-card reveal delay-3">Excel & Reporting</div>
+<div class="skill-card reveal delay-1">Transaction Monitoring</div>
+<div class="skill-card reveal delay-2">Team Management</div>
+<div class="skill-card reveal delay-3">Escalation Handling</div>
 </div>
 </section>
 
@@ -149,13 +175,29 @@ Download CV
 </footer>
 
 <script>
+/* Active Nav */
 const currentPage=location.pathname.split("/").pop();
 document.querySelectorAll("nav a").forEach(l=>{
 if(l.getAttribute("href")===currentPage){l.classList.add("active")}
 });
+
+/* Page Exit */
 document.querySelectorAll("nav a").forEach(l=>{
 l.addEventListener("click",()=>document.body.classList.add("page-exit"));
 });
+
+/* Scroll Reveal */
+const reveals=document.querySelectorAll(".reveal");
+const revealOnScroll=()=>{
+    const h=window.innerHeight*0.85;
+    reveals.forEach(el=>{
+        if(el.getBoundingClientRect().top<h){
+            el.classList.add("active");
+        }
+    });
+};
+window.addEventListener("scroll",revealOnScroll);
+revealOnScroll();
 </script>
 
 </body>
