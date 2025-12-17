@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Sai Kumar Tandyala | Data Analyst</title>
 
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <style>
         body {
             margin: 0;
@@ -64,17 +67,91 @@
             color: #d1d5db;
         }
 
-        .links a {
-            display: inline-block;
-            margin-right: 20px;
-            margin-top: 10px;
-            color: #60a5fa;
-            text-decoration: none;
-            font-weight: 500;
+        /* Footer */
+        .footer {
+            background: radial-gradient(circle at top left, #2b0a3d, #0b0616);
+            padding: 60px 40px 30px;
+            margin-top: 80px;
         }
 
-        .links a:hover {
-            text-decoration: underline;
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .footer h3 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer p {
+            color: #b6b6c3;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer-contact i {
+            color: #a855f7;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .social-icons a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #1a1028;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c4b5fd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            background: #6d28d9;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #241133;
+            margin-top: 40px;
+            padding-top: 20px;
+            text-align: center;
+            color: #8b8ba7;
+            font-size: 13px;
+        }
+
+        @media (max-width: 900px) {
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-contact p {
+                justify-content: center;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -90,8 +167,8 @@
         <h2>About</h2>
         <p>
             I am a Data Analyst with hands-on experience in SQL, Power BI, and Tableau.
-            I work on data analysis, dashboard creation, and financial transaction analysis
-            to support data-driven business decisions.
+            I specialize in data analysis, dashboard creation, and financial transaction
+            analysis to support data-driven business decisions.
         </p>
 
         <h2>Skills</h2>
@@ -99,7 +176,7 @@
             <li>SQL (Joins, Subqueries, CTEs, Query Optimization)</li>
             <li>Power BI (DAX, Data Modeling, Performance Optimization)</li>
             <li>Tableau (Dashboards, Calculated Fields)</li>
-            <li>Excel (Advanced formulas, Pivot Tables)</li>
+            <li>Microsoft Excel</li>
         </ul>
 
         <h2>Projects</h2>
@@ -109,15 +186,53 @@
             <li>Customer Behaviour Analysis using SQL</li>
         </ul>
 
-        <h2>Contact</h2>
-        <div class="links">
-            <a href="mailto:your-email@gmail.com">Email</a>
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-            <a href="#">Resume (PDF)</a>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div>
+            <h3>Sai Kumar Tandyala</h3>
+            <p>
+                Data Analyst specializing in creating insightful,
+                reliable, and data-driven solutions using SQL,
+                Power BI, and Tableau.
+            </p>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Contact</h3>
+            <p><i class="fa-solid fa-envelope"></i> saikumar@email.com</p>
+            <p><i class="fa-solid fa-phone"></i> +91 XXXXXXXXXX</p>
+            <p><i class="fa-solid fa-location-dot"></i> India</p>
+        </div>
+
+        <div>
+            <h3>Connect</h3>
+            <div class="social-icons">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="mailto:saikumar@email.com">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+            </div>
+            <p>Let’s create something meaningful together.</p>
         </div>
 
     </div>
-</div>
+
+    <div class="footer-bottom">
+        © 2025 Sai Kumar Tandyala. All rights reserved.
+    </div>
+</footer>
 
 </body>
 </html>
