@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sai Kumar Tandyala | Portfolio</title>
+<title>Sai Kumar Tandyala | Home</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -10,7 +10,6 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 
-/* ================= BODY ================= */
 body{
     font-family:'Poppins',sans-serif;
     color:#fff;
@@ -21,27 +20,20 @@ body{
         #0b0616;
 }
 
-/* ================= DECORATIVE LAYERS ================= */
+/* Decorative */
 .bg-blob{
-    position:absolute;
-    width:420px;
-    height:420px;
+    position:absolute;width:420px;height:420px;
     background:radial-gradient(circle, rgba(139,92,246,0.35), transparent 70%);
-    filter:blur(90px);
-    z-index:0;
+    filter:blur(90px);z-index:0;
 }
 .blob-1{top:-120px;left:-120px}
 .blob-2{top:80px;right:-150px}
 
 .dot-cluster{
-    position:absolute;
-    width:180px;
-    height:180px;
-    background-image:radial-gradient(rgba(255,255,255,0.2) 1.4px, transparent 1.4px);
+    position:absolute;width:180px;height:180px;
+    background-image:radial-gradient(rgba(255,255,255,.2) 1.4px, transparent 1.4px);
     background-size:14px 14px;
-    opacity:0.55;
-    filter:blur(0.3px);
-    z-index:1;
+    opacity:.55;filter:blur(.3px);
     animation:floatDots 14s ease-in-out infinite;
 }
 .dots-1{top:220px;left:120px}
@@ -53,87 +45,44 @@ body{
     100%{transform:translateY(0)}
 }
 
-/* ================= NAV ================= */
+/* Navbar */
 header{
     padding:24px 80px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:relative;
-    z-index:3;
+    display:flex;justify-content:space-between;align-items:center;
+    position:relative;z-index:3;
 }
 .logo{font-size:22px;font-weight:600}
 nav ul{list-style:none;display:flex;gap:32px}
 nav a{
-    color:#cfcfe3;
-    text-decoration:none;
-    font-size:14px;
-    padding:6px 12px;
-    border-radius:6px;
+    color:#cfcfe3;text-decoration:none;font-size:14px;
+    padding:6px 12px;border-radius:6px;
 }
 nav a.active{border:1px solid #8b5cf6;color:#fff}
 .contact-btn{
-    background:#8b5cf6;
-    padding:8px 18px;
-    border-radius:20px;
-    color:#fff!important;
+    background:#8b5cf6;padding:8px 18px;border-radius:20px;color:#fff!important;
 }
 
-/* ================= HERO ================= */
+/* Hero */
 .hero{
-    position:relative;
-    z-index:2;
-    display:grid;
-    grid-template-columns:1.05fr 1fr;
-    align-items:center;
-    padding:120px 80px 110px;
-    gap:100px;
+    display:grid;grid-template-columns:1.05fr 1fr;
+    padding:95px 80px 100px;gap:100px;align-items:center;
 }
-
 .hero-content{max-width:460px}
-
 .hero span{
-    display:inline-block;
-    background:rgba(139,92,246,0.18);
-    color:#c4b5fd;
-    padding:6px 18px;
-    border-radius:20px;
-    font-size:13px;
+    display:inline-block;background:rgba(139,92,246,.18);
+    color:#c4b5fd;padding:6px 18px;border-radius:20px;
+    margin-bottom:22px;font-size:13px;
 }
-
-.hero h1{
-    font-size:64px;
-    line-height:1.1;
-    margin:28px 0 14px;
-}
-
-.hero h2{
-    font-size:26px;
-    font-weight:400;
-    color:#a78bfa;
-    margin-bottom:28px;
-}
-
-.hero p{
-    font-size:16px;
-    line-height:1.9;
-    color:#d1d5db;
-}
-
+.hero h1{font-size:64px;line-height:1.1;margin-bottom:14px}
+.hero h2{font-size:26px;color:#a78bfa;margin-bottom:28px;font-weight:400}
+.hero p{font-size:16px;line-height:1.9;color:#d1d5db}
 .highlight{color:#c4b5fd;font-weight:600}
 
 /* Buttons */
-.buttons{
-    display:flex;
-    gap:24px;
-    margin-top:42px;
-}
+.buttons{display:flex;gap:24px;margin-top:42px}
 .buttons a{
-    padding:14px 30px;
-    border-radius:30px;
-    text-decoration:none;
-    transition:transform .5s cubic-bezier(.22,1,.36,1),
-               box-shadow .5s cubic-bezier(.22,1,.36,1);
+    padding:14px 30px;border-radius:30px;text-decoration:none;
+    transition:.45s cubic-bezier(.22,1,.36,1);
 }
 .btn-primary{background:#8b5cf6;color:#fff}
 .btn-secondary{border:1px solid #6b7280;color:#fff}
@@ -142,38 +91,23 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
     box-shadow:0 16px 40px rgba(139,92,246,.35);
 }
 
-/* ================= IMAGE ================= */
-.hero-image{
-    position:relative;
-    margin-top:10px;
-    transition:transform .6s cubic-bezier(.22,1,.36,1);
-}
+/* Image */
 .hero-image img{
-    width:380px;
-    height:500px;
-    object-fit:cover;
-    border-radius:24px;
-    box-shadow:0 50px 90px rgba(0,0,0,.6);
+    width:380px;height:500px;object-fit:cover;border-radius:24px;
     animation:floatImage 7s ease-in-out infinite;
+    box-shadow:0 50px 90px rgba(0,0,0,.6);
 }
-
 @keyframes floatImage{
     0%{transform:translateY(0)}
     50%{transform:translateY(-16px)}
     100%{transform:translateY(0)}
 }
 
-/* ================= FOOTER ================= */
-.footer{
-    background:radial-gradient(circle at top left,#2b0a3d,#0b0616);
-    padding:60px 40px 30px;
-}
+/* Footer */
+.footer{background:radial-gradient(circle at top left,#2b0a3d,#0b0616);padding:60px 40px 30px}
 .footer-container{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:40px;
+    max-width:1200px;margin:auto;
+    display:grid;grid-template-columns:repeat(3,1fr);gap:40px;
 }
 .footer h3{margin-bottom:15px}
 .footer p{color:#b6b6c3;font-size:14px}
@@ -181,28 +115,29 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
 .footer-contact i{color:#a855f7}
 .social-icons{display:flex;gap:15px}
 .social-icons a{
-    width:42px;height:42px;
-    background:#1a1028;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#c4b5fd;
+    width:42px;height:42px;background:#1a1028;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;color:#c4b5fd;
 }
 .footer-bottom{
-    border-top:1px solid #241133;
-    margin-top:40px;
-    padding-top:20px;
-    text-align:center;
-    color:#8b8ba7;
-    font-size:13px;
+    border-top:1px solid #241133;margin-top:40px;padding-top:20px;
+    text-align:center;color:#8b8ba7;font-size:13px;
 }
+
+/* Animations */
+.reveal{
+    opacity:0;transform:translateY(24px);
+    transition:.9s cubic-bezier(.22,1,.36,1);
+}
+.reveal.active{opacity:1;transform:translateY(0)}
+.delay-1{transition-delay:.15s}
+.delay-2{transition-delay:.3s}
+.delay-3{transition-delay:.45s}
+.delay-4{transition-delay:.6s}
 </style>
 </head>
 
 <body>
 
-<!-- Background layers -->
 <div class="bg-blob blob-1"></div>
 <div class="bg-blob blob-2"></div>
 <div class="dot-cluster dots-1"></div>
@@ -212,54 +147,47 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
 <div class="logo">Sai Kumar</div>
 <nav>
 <ul>
-<li><a href="index.html" class="active">HOME</a></li>
+<li><a class="active" href="index.html">HOME</a></li>
 <li><a href="about.html">ABOUT</a></li>
 <li><a href="#">PORTFOLIO</a></li>
-<li><a href="contact.html" class="contact-btn">Contact</a></li>
+<li><a class="contact-btn" href="contact.html">Contact</a></li>
 </ul>
 </nav>
 </header>
 
 <section class="hero">
 <div class="hero-content">
-<span>Welcome to my portfolio</span>
-<h1>SAI KUMAR TANDYALA</h1>
-<h2>Data Analyst</h2>
-<p>
+<span class="reveal delay-1">Welcome to my portfolio</span>
+<h1 class="reveal delay-2">SAI KUMAR TANDYALA</h1>
+<h2 class="reveal delay-3">Data Analyst</h2>
+<p class="reveal delay-4">
 I create <span class="highlight">data-driven insights</span> using
 <span class="highlight">SQL, Power BI, and Tableau</span>
 to support smart business decisions.
 </p>
-
-<div class="buttons">
+<div class="buttons reveal delay-4">
 <a href="#" class="btn-primary">View Projects →</a>
-<a href="Sai_Kumar_Tandyala_Resume.pdf" class="btn-secondary" download>
-Download Resume
-</a>
+<a href="Sai_Kumar_Tandyala_Resume.pdf" class="btn-secondary" download>Download Resume</a>
 </div>
 </div>
 
-<div class="hero-image" id="heroImage">
+<div class="hero-image reveal delay-3">
 <img src="profile.jpg" alt="Sai Kumar">
 </div>
 </section>
 
-<!-- ===== FOOTER START ===== -->
 <footer class="footer">
 <div class="footer-container">
-
 <div>
 <h3>Sai Kumar Tandyala</h3>
 <p>Data Analyst specializing in SQL, Power BI, Tableau.</p>
 </div>
-
 <div class="footer-contact">
 <h3>Contact</h3>
 <p><i class="fa-solid fa-envelope"></i> your@email.com</p>
 <p><i class="fa-solid fa-phone"></i> +91 XXXXXXXXXX</p>
 <p><i class="fa-solid fa-location-dot"></i> India</p>
 </div>
-
 <div>
 <h3>Connect</h3>
 <div class="social-icons">
@@ -269,23 +197,20 @@ Download Resume
 <a href="#"><i class="fa-solid fa-envelope"></i></a>
 </div>
 </div>
-
 </div>
-
-<div class="footer-bottom">
-© 2025 Sai Kumar Tandyala. All rights reserved.
-</div>
+<div class="footer-bottom">© 2025 Sai Kumar Tandyala. All rights reserved.</div>
 </footer>
-<!-- ===== FOOTER END ===== -->
 
-<!-- ================= PARALLAX SCRIPT ================= -->
 <script>
-const heroImage = document.getElementById("heroImage");
-document.addEventListener("mousemove", e => {
-    const x = (window.innerWidth / 2 - e.clientX) / 35;
-    const y = (window.innerHeight / 2 - e.clientY) / 35;
-    heroImage.style.transform = `translate(${x}px, ${y}px)`;
-});
+const reveals=document.querySelectorAll('.reveal');
+const revealOnScroll=()=>{
+  const h=window.innerHeight*0.85;
+  reveals.forEach(el=>{
+    if(el.getBoundingClientRect().top<h){el.classList.add('active')}
+  });
+};
+window.addEventListener('scroll',revealOnScroll);
+window.addEventListener('load',revealOnScroll);
 </script>
 
 </body>
