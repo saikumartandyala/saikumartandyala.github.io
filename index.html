@@ -23,6 +23,10 @@
             color: #ffffff;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         /* NAVBAR */
         header {
             padding: 20px 60px;
@@ -89,10 +93,6 @@
             margin-bottom: 20px;
         }
 
-        .hero-left h1 span {
-            display: block;
-        }
-
         .hero-left h2 {
             font-size: 28px;
             font-weight: 400;
@@ -139,6 +139,36 @@
             height: 460px;
             background: linear-gradient(180deg, #4c1d95, #1e1b4b);
             border-radius: 20px;
+        }
+
+        /* ABOUT SECTION */
+        .about {
+            padding: 100px 60px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            color: #c4b5fd;
+        }
+
+        .about p {
+            font-size: 16px;
+            line-height: 1.9;
+            color: #d1d5db;
+            margin-bottom: 35px;
+        }
+
+        .resume-btn {
+            display: inline-block;
+            background: #8b5cf6;
+            padding: 14px 30px;
+            border-radius: 30px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 15px;
         }
 
         /* FOOTER */
@@ -211,11 +241,16 @@
             }
 
             .hero-left h1 {
-                font-size: 52px;
+                font-size: 48px;
             }
 
             .buttons {
                 justify-content: center;
+            }
+
+            .about {
+                padding: 70px 30px;
+                text-align: center;
             }
 
             .footer-container {
@@ -238,7 +273,7 @@
     <nav>
         <ul>
             <li><a class="active" href="#">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
+            <li><a href="#about">ABOUT</a></li>
             <li><a href="#">PORTFOLIO</a></li>
             <li><a class="contact-btn" href="#">Contact</a></li>
         </ul>
@@ -250,7 +285,6 @@
         <span>Welcome to my portfolio</span>
 
         <h1>SAI KUMAR TANDYALA</h1>
-
         <h2>Data Analyst</h2>
 
         <p>
@@ -260,13 +294,29 @@
 
         <div class="buttons">
             <a href="#" class="btn-primary">View Projects →</a>
-            <a href="#" class="btn-secondary">Contact Me</a>
+            <a href="Sai_Kumar_Tandyala_Resume.pdf" class="btn-secondary" download>Download Resume</a>
         </div>
     </div>
 
     <div class="hero-right">
         <div class="image-box"></div>
     </div>
+</section>
+
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+        I am a management student with strong experience as a Business Process Analyst
+        in transaction monitoring and team management, with strong expertise in data
+        analysis, reporting, and escalation handling. Skilled in SQL, Power BI, and Excel
+        for generating actionable insights and supporting management decisions. Adept
+        at managing teams, streamlining escalation processes, and presenting performance
+        insights to senior management.
+    </p>
+
+    <a href="Sai_Kumar_Tandyala_Resume.pdf" class="resume-btn" download>
+        Download Resume
+    </a>
 </section>
 
 <footer class="footer">
@@ -307,4 +357,3 @@
 
 </body>
 </html>
-
