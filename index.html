@@ -15,35 +15,48 @@ body{
     background:#0b0616;
     color:#fff;
     overflow-x:hidden;
-    animation:fadeIn .8s ease;
 }
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-body.page-exit{opacity:0;transition:.3s}
 
-/* DECORATIVE DOT BACKGROUND */
-.dots{
+/* ================= BACKGROUND DESIGN LAYERS ================= */
+
+/* Glow blobs */
+.bg-blob{
     position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-image:radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
-    background-size:30px 30px;
-    pointer-events:none;
+    width:420px;
+    height:420px;
+    background:radial-gradient(circle, rgba(139,92,246,0.35), transparent 70%);
+    filter:blur(80px);
     z-index:0;
 }
+.blob-1{top:-120px;left:-120px}
+.blob-2{top:120px;right:-150px}
 
-/* NAV */
+/* Decorative dot clusters */
+.dot-cluster{
+    position:absolute;
+    width:180px;
+    height:180px;
+    background-image:radial-gradient(rgba(255,255,255,0.18) 1.4px, transparent 1.4px);
+    background-size:14px 14px;
+    opacity:0.35;
+    z-index:1;
+}
+.dots-1{top:160px;left:90px}
+.dots-2{bottom:140px;right:160px}
+
+/* ================= NAV ================= */
+
 header{
-    padding:24px 80px;
+    padding:28px 90px;
     display:flex;
     justify-content:space-between;
     align-items:center;
     position:relative;
-    z-index:2;
+    z-index:3;
 }
 .logo{font-size:22px;font-weight:600}
-nav ul{list-style:none;display:flex;gap:32px}
+
+nav ul{list-style:none;display:flex;gap:34px}
 nav a{
     color:#cfcfe3;
     text-decoration:none;
@@ -51,49 +64,53 @@ nav a{
     padding:6px 12px;
     border-radius:6px;
 }
-nav a.active{border:1px solid #8b5cf6;color:#fff}
+nav a.active{
+    border:1px solid #8b5cf6;
+    color:#fff;
+}
 .contact-btn{
     background:#8b5cf6;
-    border-radius:20px;
     padding:8px 18px;
+    border-radius:20px;
     color:#fff!important;
 }
 
-/* HERO */
+/* ================= HERO ================= */
+
 .hero{
     position:relative;
-    z-index:1;
+    z-index:2;
     display:grid;
-    grid-template-columns:1.1fr 1fr;
+    grid-template-columns:1.05fr 1fr;
     align-items:center;
-    padding:140px 80px 120px;
-    gap:80px;
+    padding:160px 90px 140px;
+    gap:100px;
 }
 
 .hero-content{
-    max-width:520px;
+    max-width:500px;
 }
 
 .hero span{
     display:inline-block;
-    background:rgba(139,92,246,.15);
+    background:rgba(139,92,246,.18);
     color:#c4b5fd;
-    padding:6px 16px;
+    padding:6px 18px;
     border-radius:20px;
     font-size:13px;
 }
 
 .hero h1{
-    font-size:64px;
-    line-height:1.1;
-    margin:26px 0 14px;
+    font-size:66px;
+    line-height:1.08;
+    margin:30px 0 16px;
 }
 
 .hero h2{
     font-size:26px;
     font-weight:400;
     color:#a78bfa;
-    margin-bottom:28px;
+    margin-bottom:30px;
 }
 
 .hero p{
@@ -104,42 +121,46 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
 
 .highlight{color:#c4b5fd;font-weight:600}
 
+/* Buttons */
 .buttons{
     display:flex;
-    gap:22px;
-    margin-top:42px;
+    gap:24px;
+    margin-top:46px;
 }
 .buttons a{
     transition:.4s;
 }
 .buttons a:hover{
     transform:translateY(-4px);
-    box-shadow:0 14px 34px rgba(139,92,246,.35);
+    box-shadow:0 16px 40px rgba(139,92,246,.35);
 }
 
-/* IMAGE */
+/* ================= IMAGE ================= */
+
 .hero-image{
     position:relative;
+    margin-top:40px;
 }
 .hero-image img{
-    width:360px;
-    height:480px;
-    border-radius:22px;
+    width:380px;
+    height:500px;
+    border-radius:24px;
     object-fit:cover;
-    animation:float 6s ease-in-out infinite;
-    box-shadow:0 40px 80px rgba(0,0,0,.55);
+    animation:float 7s ease-in-out infinite;
+    box-shadow:0 50px 90px rgba(0,0,0,.6);
 }
 
 @keyframes float{
     0%{transform:translateY(0)}
-    50%{transform:translateY(-14px)}
+    50%{transform:translateY(-16px)}
     100%{transform:translateY(0)}
 }
 
-/* REVEAL */
+/* ================= REVEAL ================= */
+
 .reveal{
     opacity:0;
-    transform:translateY(28px);
+    transform:translateY(30px);
     transition:all .9s ease;
 }
 .reveal.active{
@@ -151,7 +172,8 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
 .delay-3{transition-delay:.45s}
 .delay-4{transition-delay:.6s}
 
-/* FOOTER (UNCHANGED) */
+/* ================= FOOTER ================= */
+
 .footer{
     background:radial-gradient(circle at top left,#2b0a3d,#0b0616);
     padding:60px 40px 30px;
@@ -190,7 +212,11 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
 
 <body>
 
-<div class="dots"></div>
+<!-- Background layers -->
+<div class="bg-blob blob-1"></div>
+<div class="bg-blob blob-2"></div>
+<div class="dot-cluster dots-1"></div>
+<div class="dot-cluster dots-2"></div>
 
 <header>
 <div class="logo">Sai Kumar</div>
@@ -258,11 +284,6 @@ Download Resume
 const currentPage=location.pathname.split("/").pop();
 document.querySelectorAll("nav a").forEach(l=>{
 if(l.getAttribute("href")===currentPage){l.classList.add("active")}
-});
-
-/* Page exit */
-document.querySelectorAll("nav a").forEach(l=>{
-l.addEventListener("click",()=>document.body.classList.add("page-exit"));
 });
 
 /* Reveal */
