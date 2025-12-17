@@ -139,7 +139,7 @@
             background: linear-gradient(180deg, #4c1d95, #1e1b4b);
         }
 
-        /* FOOTER (UNCHANGED) */
+        /* FOOTER */
         .footer {
             background: radial-gradient(circle at top left, #2b0a3d, #0b0616);
             padding: 60px 40px 30px;
@@ -221,6 +221,16 @@
                 height: 380px;
                 margin-top: 30px;
             }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-contact p,
+            .social-icons {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -234,7 +244,7 @@
             <li><a class="active" href="index.html">HOME</a></li>
             <li><a href="about.html">ABOUT</a></li>
             <li><a href="#">PORTFOLIO</a></li>
-            <li><a class="contact-btn" href="#">Contact</a></li>
+            <li><a class="contact-btn" href="contact.html">Contact</a></li>
         </ul>
     </nav>
 </header>
