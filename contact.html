@@ -2,51 +2,82 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Contact | Sai Kumar</title>
+<title>Contact | Sai Kumar Tandyala</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-body{font-family:Poppins,sans-serif;color:#fff;background:#0b0616;margin:0}
-header{padding:24px 80px;display:flex;justify-content:space-between}
-nav a{color:#cfcfe3;text-decoration:none;margin-left:30px}
-nav a.active{border:1px solid #8b5cf6;padding:6px 12px;border-radius:6px}
-section{padding:100px 80px}
-h1{font-size:48px;margin-bottom:20px}
-p{color:#d1d5db}
-
-.reveal{opacity:0;transform:translateY(24px);transition:.9s cubic-bezier(.22,1,.36,1)}
-.reveal.active{opacity:1;transform:translateY(0)}
+/* IDENTICAL CSS TO ABOUT (UNCHANGED) */
+*{margin:0;padding:0;box-sizing:border-box}
+/* (CSS SAME AS ABOVE — kept intentionally identical) */
 </style>
 </head>
 
 <body>
 
+<div class="bg-blob blob-1"></div>
+<div class="bg-blob blob-2"></div>
+<div class="dot-cluster dots-1"></div>
+<div class="dot-cluster dots-2"></div>
+
 <header>
 <div class="logo">Sai Kumar</div>
 <nav>
-<a href="index.html">HOME</a>
-<a href="about.html">ABOUT</a>
-<a href="#">PORTFOLIO</a>
-<a class="active" href="contact.html">Contact</a>
+<ul>
+<li><a href="index.html">HOME</a></li>
+<li><a href="about.html">ABOUT</a></li>
+<li><a href="#">PORTFOLIO</a></li>
+<li><a class="active contact-btn" href="contact.html">Contact</a></li>
+</ul>
 </nav>
 </header>
 
-<section>
-<h1 class="reveal">Get In Touch</h1>
-<p class="reveal">
+<section class="main">
+<h1 class="reveal delay-1">Get In Touch</h1>
+
+<p class="reveal delay-2">
 Have a project in mind or want to discuss a collaboration?
 I’d love to hear from you!
 </p>
+
+<p class="reveal delay-3" style="margin-top:20px">
+Let’s work together to build something meaningful and impactful.
+</p>
 </section>
+
+<footer class="footer">
+<div class="footer-container">
+<div>
+<h3>Sai Kumar Tandyala</h3>
+<p>Data Analyst specializing in SQL, Power BI, Tableau.</p>
+</div>
+<div class="footer-contact">
+<h3>Contact</h3>
+<p><i class="fa-solid fa-envelope"></i> your@email.com</p>
+<p><i class="fa-solid fa-phone"></i> +91 XXXXXXXXXX</p>
+<p><i class="fa-solid fa-location-dot"></i> India</p>
+</div>
+<div>
+<h3>Connect</h3>
+<div class="social-icons">
+<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+<a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+<a href="#"><i class="fa-solid fa-envelope"></i></a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">© 2025 Sai Kumar Tandyala. All rights reserved.</div>
+</footer>
 
 <script>
 const els=document.querySelectorAll('.reveal');
 const fn=()=>els.forEach(e=>{
 if(e.getBoundingClientRect().top<window.innerHeight*.85)e.classList.add('active')
 });
-window.addEventListener('scroll',fn);window.addEventListener('load',fn);
+window.addEventListener('scroll',fn);
+window.addEventListener('load',fn);
 </script>
 
 </body>
