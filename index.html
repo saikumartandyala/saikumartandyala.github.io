@@ -21,6 +21,21 @@
             font-family: 'Poppins', sans-serif;
             background: radial-gradient(circle at top left, #2b0a3d, #0b0616);
             color: #ffffff;
+
+            /* PART B: PAGE FADE-IN */
+            animation: fadeIn 0.6s ease-in-out;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* NAVBAR */
@@ -52,6 +67,7 @@
             border-radius: 6px;
         }
 
+        /* PART A: ACTIVE NAV ITEM */
         nav ul li a.active {
             border: 1px solid #8b5cf6;
             color: #ffffff;
@@ -125,7 +141,6 @@
             text-decoration: none;
         }
 
-        /* HERO IMAGE */
         .hero-right {
             display: flex;
             justify-content: center;
@@ -136,7 +151,6 @@
             height: 460px;
             border-radius: 20px;
             object-fit: cover;
-            background: linear-gradient(180deg, #4c1d95, #1e1b4b);
         }
 
         /* FOOTER */
@@ -164,34 +178,6 @@
             line-height: 1.6;
         }
 
-        .footer-contact p {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .footer-contact i {
-            color: #a855f7;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .social-icons a {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: #1a1028;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #c4b5fd;
-            text-decoration: none;
-        }
-
         .footer-bottom {
             border-top: 1px solid #241133;
             margin-top: 40px;
@@ -208,27 +194,7 @@
                 padding: 40px 30px;
             }
 
-            .hero-left h1 {
-                font-size: 48px;
-            }
-
             .buttons {
-                justify-content: center;
-            }
-
-            .profile-image {
-                width: 280px;
-                height: 380px;
-                margin-top: 30px;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-contact p,
-            .social-icons {
                 justify-content: center;
             }
         }
@@ -241,7 +207,7 @@
     <div class="logo">Sai Kumar</div>
     <nav>
         <ul>
-            <li><a class="active" href="index.html">HOME</a></li>
+            <li><a href="index.html">HOME</a></li>
             <li><a href="about.html">ABOUT</a></li>
             <li><a href="#">PORTFOLIO</a></li>
             <li><a class="contact-btn" href="contact.html">Contact</a></li>
@@ -252,7 +218,6 @@
 <section class="hero">
     <div class="hero-left">
         <span>Welcome to my portfolio</span>
-
         <h1>SAI KUMAR TANDYALA</h1>
         <h2>Data Analyst</h2>
 
@@ -270,45 +235,58 @@
     </div>
 
     <div class="hero-right">
-        <img src="profile.jpg" alt="Sai Kumar Tandyala" class="profile-image">
+        <img src="profile.jpg" alt="Sai Kumar" class="profile-image">
     </div>
 </section>
 
 <footer class="footer">
     <div class="footer-container">
-
         <div>
             <h3>Sai Kumar Tandyala</h3>
-            <p>
-                Data Analyst specializing in SQL, Power BI, Tableau,
-                and data-driven business insights.
-            </p>
+            <p>Data Analyst specializing in SQL, Power BI, Tableau.</p>
         </div>
-
-        <div class="footer-contact">
+        <div>
             <h3>Contact</h3>
-            <p><i class="fa-solid fa-envelope"></i> your@email.com</p>
-            <p><i class="fa-solid fa-phone"></i> +91 XXXXXXXXXX</p>
-            <p><i class="fa-solid fa-location-dot"></i> India</p>
+            <p>Email: your@email.com</p>
+            <p>India</p>
         </div>
-
         <div>
             <h3>Connect</h3>
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="#"><i class="fa-solid fa-envelope"></i></a>
-            </div>
-            <p>Let’s create something meaningful together.</p>
+            <p>LinkedIn | Email</p>
         </div>
-
     </div>
 
     <div class="footer-bottom">
         © 2025 Sai Kumar Tandyala. All rights reserved.
     </div>
 </footer>
+
+<!-- PART A: ACTIVE NAVBAR SCRIPT -->
+<script>
+    const currentPage = window.location.pathname.split("/").pop();
+
+    document.querySelectorAll("nav a").forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        }
+    });
+</script>
+
+<!-- PART B: PAGE FADE-OUT BEFORE NAVIGATION -->
+<script>
+    document.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            if (this.getAttribute("href").includes(".html")) {
+                e.preventDefault();
+                const target = this.getAttribute("href");
+                document.body.style.opacity = "0";
+                setTimeout(() => {
+                    window.location.href = target;
+                }, 300);
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
