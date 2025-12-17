@@ -8,18 +8,112 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* IDENTICAL CSS TO ABOUT (UNCHANGED) */
 *{margin:0;padding:0;box-sizing:border-box}
-/* (CSS SAME AS ABOVE — kept intentionally identical) */
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:radial-gradient(circle at top left,#2b0a3d,#0b0616);
+    color:#fff;
+    animation:fadeIn .6s ease;
+}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+body.page-exit{opacity:0;transition:.3s}
+
+/* NAV */
+header{padding:20px 60px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:600}
+nav ul{list-style:none;display:flex;gap:30px}
+nav a{color:#cfcfe3;text-decoration:none;font-size:14px;padding:6px 12px;border-radius:6px}
+nav a.active{border:1px solid #8b5cf6;color:#fff}
+.contact-btn{background:#8b5cf6;border-radius:20px;padding:8px 18px;color:#fff!important}
+
+/* REVEAL */
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:all .7s ease;
+}
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+
+/* CONTACT */
+.contact-header{
+    padding:60px 20px 30px;
+    text-align:center;
+}
+.contact-header h1{font-size:42px;margin-bottom:10px}
+.contact-header p{color:#d1d5db}
+
+.contact-container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 60px 80px;
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:60px;
+}
+
+.info-item{display:flex;gap:15px;margin-bottom:18px;color:#d1d5db}
+.info-item i{color:#a855f7}
+
+.work-card{
+    margin-top:35px;
+    background:linear-gradient(180deg,#2a145a,#160b2f);
+    padding:30px;
+    border-radius:15px;
+    transition:.35s;
+}
+.work-card:hover{transform:translateY(-6px)}
+
+/* FORM */
+.form-group{margin-bottom:20px}
+input,textarea{
+    width:100%;
+    padding:14px;
+    background:#120a24;
+    border:1px solid #2a145a;
+    border-radius:10px;
+    color:#fff;
+    transition:.3s;
+}
+input:focus,textarea:focus{
+    outline:none;
+    border-color:#8b5cf6;
+    box-shadow:0 0 0 3px rgba(139,92,246,.25);
+}
+
+button{
+    background:#8b5cf6;
+    padding:14px 30px;
+    border-radius:30px;
+    border:none;
+    color:#fff;
+    transition:.3s;
+}
+button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(139,92,246,.35);
+}
+
+/* FOOTER */
+.footer{background:radial-gradient(circle at top left,#2b0a3d,#0b0616);padding:60px 40px 30px}
+.footer-container{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.footer h3{margin-bottom:15px}
+.footer p{color:#b6b6c3;font-size:14px}
+.footer-contact p{display:flex;gap:10px;margin-bottom:10px}
+.footer-contact i{color:#a855f7}
+.social-icons{display:flex;gap:15px}
+.social-icons a{width:42px;height:42px;background:#1a1028;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#c4b5fd}
+.footer-bottom{border-top:1px solid #241133;margin-top:40px;padding-top:20px;text-align:center;color:#8b8ba7;font-size:13px}
 </style>
 </head>
 
 <body>
-
-<div class="bg-blob blob-1"></div>
-<div class="bg-blob blob-2"></div>
-<div class="dot-cluster dots-1"></div>
-<div class="dot-cluster dots-2"></div>
 
 <header>
 <div class="logo">Sai Kumar</div>
@@ -28,22 +122,42 @@
 <li><a href="index.html">HOME</a></li>
 <li><a href="about.html">ABOUT</a></li>
 <li><a href="#">PORTFOLIO</a></li>
-<li><a class="active contact-btn" href="contact.html">Contact</a></li>
+<li><a href="contact.html" class="contact-btn">Contact</a></li>
 </ul>
 </nav>
 </header>
 
-<section class="main">
+<section class="contact-header">
 <h1 class="reveal delay-1">Get In Touch</h1>
-
 <p class="reveal delay-2">
 Have a project in mind or want to discuss a collaboration?
-I’d love to hear from you!
+I'd love to hear from you!
 </p>
+</section>
 
-<p class="reveal delay-3" style="margin-top:20px">
-Let’s work together to build something meaningful and impactful.
+<section class="contact-container">
+<div class="reveal delay-1">
+<h3>Contact Information</h3>
+<div class="info-item"><i class="fa-solid fa-envelope"></i> your@email.com</div>
+<div class="info-item"><i class="fa-solid fa-phone"></i> +91 XXXXXXXXXX</div>
+<div class="info-item"><i class="fa-solid fa-location-dot"></i> India</div>
+
+<div class="work-card reveal delay-2">
+<h4>Let's Work Together</h4>
+<p>
+Looking for a designer who can bring your ideas to life?
+I'm always open to discussing new projects or opportunities.
 </p>
+</div>
+</div>
+
+<div class="reveal delay-2">
+<h3>Send Me a Message</h3>
+<div class="form-group"><input placeholder="Your Name"></div>
+<div class="form-group"><input placeholder="Your Email"></div>
+<div class="form-group"><textarea placeholder="Your Message"></textarea></div>
+<button>Send Message</button>
+</div>
 </section>
 
 <footer class="footer">
@@ -72,12 +186,29 @@ Let’s work together to build something meaningful and impactful.
 </footer>
 
 <script>
-const els=document.querySelectorAll('.reveal');
-const fn=()=>els.forEach(e=>{
-if(e.getBoundingClientRect().top<window.innerHeight*.85)e.classList.add('active')
+/* Active Nav */
+const currentPage=location.pathname.split("/").pop();
+document.querySelectorAll("nav a").forEach(l=>{
+if(l.getAttribute("href")===currentPage){l.classList.add("active")}
 });
-window.addEventListener('scroll',fn);
-window.addEventListener('load',fn);
+
+/* Page Exit */
+document.querySelectorAll("nav a").forEach(l=>{
+l.addEventListener("click",()=>document.body.classList.add("page-exit"));
+});
+
+/* Scroll Reveal */
+const reveals=document.querySelectorAll(".reveal");
+const revealOnScroll=()=>{
+    const h=window.innerHeight*0.85;
+    reveals.forEach(el=>{
+        if(el.getBoundingClientRect().top<h){
+            el.classList.add("active");
+        }
+    });
+};
+window.addEventListener("scroll",revealOnScroll);
+revealOnScroll();
 </script>
 
 </body>
