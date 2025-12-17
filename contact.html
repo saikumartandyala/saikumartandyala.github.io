@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -27,7 +31,10 @@
             align-items: center;
         }
 
-        .logo { font-size: 22px; font-weight: 600; }
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+        }
 
         nav ul {
             list-style: none;
@@ -51,27 +58,29 @@
             color: #fff !important;
         }
 
-        /* PAGE HEADER */
+        /* PAGE HEADER (SPACING FIXED) */
         .contact-header {
             text-align: center;
-            padding: 90px 20px 40px;
+            padding: 60px 20px 30px; /* reduced */
         }
 
         .contact-header h1 {
             font-size: 42px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .contact-header p {
             color: #d1d5db;
             font-size: 15px;
+            max-width: 650px;
+            margin: auto;
         }
 
         /* CONTACT CONTENT */
         .contact-container {
             max-width: 1200px;
             margin: auto;
-            padding: 60px;
+            padding: 40px 60px 80px; /* reduced top spacing */
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             gap: 60px;
@@ -86,7 +95,7 @@
         .info-item {
             display: flex;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             color: #d1d5db;
             font-size: 14px;
         }
@@ -115,7 +124,7 @@
         }
 
         .work-card {
-            margin-top: 40px;
+            margin-top: 35px;
             background: linear-gradient(180deg, #2a145a, #160b2f);
             padding: 30px;
             border-radius: 15px;
@@ -174,7 +183,7 @@
             cursor: pointer;
         }
 
-        /* FOOTER (SAME AS OTHER PAGES) */
+        /* FOOTER (RESTORED – SAME AS HOME & ABOUT) */
         .footer {
             background: radial-gradient(circle at top left, #2b0a3d, #0b0616);
             padding: 60px 40px 30px;
@@ -188,9 +197,43 @@
             gap: 40px;
         }
 
+        .footer h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
         .footer p {
             color: #b6b6c3;
             font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .footer-contact p {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer-contact i {
+            color: #a855f7;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .social-icons a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #1a1028;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c4b5fd;
+            text-decoration: none;
         }
 
         .footer-bottom {
@@ -198,14 +241,14 @@
             margin-top: 40px;
             padding-top: 20px;
             text-align: center;
-            font-size: 13px;
             color: #8b8ba7;
+            font-size: 13px;
         }
 
         @media (max-width: 900px) {
             .contact-container {
                 grid-template-columns: 1fr;
-                padding: 40px 30px;
+                padding: 30px 30px 60px;
             }
         }
     </style>
@@ -259,6 +302,7 @@
             <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
             <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
         </div>
 
         <div class="work-card">
@@ -302,19 +346,33 @@
 
 <footer class="footer">
     <div class="footer-container">
+
         <div>
             <h3>Sai Kumar Tandyala</h3>
-            <p>Data Analyst & Business Process Analyst</p>
+            <p>
+                Data Analyst specializing in SQL, Power BI, Tableau,
+                and data-driven business insights.
+            </p>
         </div>
-        <div>
+
+        <div class="footer-contact">
             <h3>Contact</h3>
-            <p>Email: your@email.com</p>
-            <p>India</p>
+            <p><i class="fa-solid fa-envelope"></i> your@email.com</p>
+            <p><i class="fa-solid fa-phone"></i> +91 XXXXXXXXXX</p>
+            <p><i class="fa-solid fa-location-dot"></i> India</p>
         </div>
+
         <div>
             <h3>Connect</h3>
-            <p>LinkedIn | Email</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p>Let’s create something meaningful together.</p>
         </div>
+
     </div>
 
     <div class="footer-bottom">
