@@ -2,155 +2,174 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sai Kumar Tandyala | Data Analyst</title>
+    <title>Sai Kumar Tandyala | Portfolio</title>
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Font (Closest to reference) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background: linear-gradient(120deg, #1f2933, #111827);
-            color: #e5e7eb;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .main {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 40px;
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top left, #2b0a3d, #0b0616);
+            color: #ffffff;
         }
 
-        .card {
-            background-color: #020617;
-            max-width: 900px;
+        /* NAVBAR */
+        header {
             width: 100%;
-            padding: 40px;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-            color: #f9fafb;
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
         }
 
-        .role {
-            font-size: 18px;
-            color: #60a5fa;
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #cfcfe3;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        nav ul li a.active {
+            border: 1px solid #8b5cf6;
+            color: #ffffff;
+        }
+
+        nav ul li a:hover {
+            color: #ffffff;
+        }
+
+        .contact-btn {
+            background: #8b5cf6;
+            color: #ffffff !important;
+            padding: 8px 18px;
+            border-radius: 20px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            align-items: center;
+            padding: 80px 60px;
+            min-height: 90vh;
+        }
+
+        .hero-left span {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.15);
+            color: #c4b5fd;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .hero-left h1 {
+            font-size: 72px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-left h1 span {
+            display: block;
+        }
+
+        .hero-left h2 {
+            font-size: 28px;
+            font-weight: 400;
+            color: #a78bfa;
             margin-bottom: 30px;
         }
 
-        h2 {
-            margin-top: 35px;
-            margin-bottom: 15px;
-            font-size: 22px;
-            color: #93c5fd;
-            border-bottom: 1px solid #1f2937;
-            padding-bottom: 5px;
-        }
-
-        p {
-            line-height: 1.7;
+        .hero-left p {
+            font-size: 16px;
+            line-height: 1.8;
             color: #d1d5db;
+            max-width: 520px;
+            margin-bottom: 40px;
         }
 
-        ul {
-            padding-left: 20px;
+        .buttons {
+            display: flex;
+            gap: 20px;
         }
 
-        li {
-            margin-bottom: 10px;
-            color: #d1d5db;
-        }
-
-        /* Footer */
-        .footer {
-            background: radial-gradient(circle at top left, #2b0a3d, #0b0616);
-            padding: 60px 40px 30px;
-            margin-top: 80px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
-        }
-
-        .footer h3 {
+        .btn-primary {
+            background: #8b5cf6;
             color: #ffffff;
-            margin-bottom: 15px;
-            font-size: 18px;
-        }
-
-        .footer p {
-            color: #b6b6c3;
-            line-height: 1.6;
-            font-size: 14px;
-        }
-
-        .footer-contact p {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .footer-contact i {
-            color: #a855f7;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-
-        .social-icons a {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: #1a1028;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #c4b5fd;
+            padding: 14px 26px;
+            border-radius: 30px;
+            font-size: 15px;
             text-decoration: none;
-            transition: all 0.3s ease;
+            font-weight: 500;
         }
 
-        .social-icons a:hover {
-            background: #6d28d9;
+        .btn-secondary {
+            border: 1px solid #6b7280;
             color: #ffffff;
-            transform: translateY(-3px);
+            padding: 14px 26px;
+            border-radius: 30px;
+            font-size: 15px;
+            text-decoration: none;
         }
 
-        .footer-bottom {
-            border-top: 1px solid #241133;
-            margin-top: 40px;
-            padding-top: 20px;
-            text-align: center;
-            color: #8b8ba7;
-            font-size: 13px;
+        /* HERO RIGHT (IMAGE PLACEHOLDER) */
+        .hero-right {
+            display: flex;
+            justify-content: center;
         }
 
+        .image-box {
+            width: 340px;
+            height: 460px;
+            background: linear-gradient(180deg, #4c1d95, #1e1b4b);
+            border-radius: 20px;
+        }
+
+        /* RESPONSIVE */
         @media (max-width: 900px) {
-            .footer-container {
+            header {
+                padding: 20px 30px;
+            }
+
+            .hero {
                 grid-template-columns: 1fr;
+                padding: 40px 30px;
                 text-align: center;
             }
 
-            .footer-contact p {
+            .hero-left h1 {
+                font-size: 52px;
+            }
+
+            .buttons {
                 justify-content: center;
             }
 
-            .social-icons {
-                justify-content: center;
+            .hero-right {
+                margin-top: 40px;
             }
         }
     </style>
@@ -158,81 +177,48 @@
 
 <body>
 
-<div class="main">
-    <div class="card">
+<!-- NAVBAR -->
+<header>
+    <div class="logo">Sai Kumar</div>
+    <nav>
+        <ul>
+            <li><a href="#" class="active">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">PORTFOLIO</a></li>
+            <li><a href="#" class="contact-btn">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-        <h1>Sai Kumar Tandyala</h1>
-        <div class="role">Data Analyst • SQL • Power BI • Tableau</div>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-left">
+        <span>Welcome to my portfolio</span>
 
-        <h2>About</h2>
+        <h1>
+            SAI KUMAR
+            <span>TANDYALA</span>
+        </h1>
+
+        <h2>Data Analyst</h2>
+
         <p>
-            I am a Data Analyst with hands-on experience in SQL, Power BI, and Tableau.
-            I specialize in data analysis, dashboard creation, and financial transaction
-            analysis to support data-driven business decisions.
+            I create data-driven insights and analytical solutions
+            using SQL, Power BI, and Tableau to support informed
+            business decisions.
         </p>
 
-        <h2>Skills</h2>
-        <ul>
-            <li>SQL (Joins, Subqueries, CTEs, Query Optimization)</li>
-            <li>Power BI (DAX, Data Modeling, Performance Optimization)</li>
-            <li>Tableau (Dashboards, Calculated Fields)</li>
-            <li>Microsoft Excel</li>
-        </ul>
-
-        <h2>Projects</h2>
-        <ul>
-            <li>Loan Transaction Risk Analysis Dashboard</li>
-            <li>Sales and Profit Analysis using Tableau</li>
-            <li>Customer Behaviour Analysis using SQL</li>
-        </ul>
-
-    </div>
-</div>
-
-<footer class="footer">
-    <div class="footer-container">
-
-        <div>
-            <h3>Sai Kumar Tandyala</h3>
-            <p>
-                Data Analyst specializing in creating insightful,
-                reliable, and data-driven solutions using SQL,
-                Power BI, and Tableau.
-            </p>
+        <div class="buttons">
+            <a href="#" class="btn-primary">View Projects →</a>
+            <a href="#" class="btn-secondary">Contact Me</a>
         </div>
-
-        <div class="footer-contact">
-            <h3>Contact</h3>
-            <p><i class="fa-solid fa-envelope"></i> saikumar@email.com</p>
-            <p><i class="fa-solid fa-phone"></i> +91 XXXXXXXXXX</p>
-            <p><i class="fa-solid fa-location-dot"></i> India</p>
-        </div>
-
-        <div>
-            <h3>Connect</h3>
-            <div class="social-icons">
-                <a href="https://linkedin.com/in/yourprofile" target="_blank">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-x-twitter"></i>
-                </a>
-                <a href="mailto:saikumar@email.com">
-                    <i class="fa-solid fa-envelope"></i>
-                </a>
-            </div>
-            <p>Let’s create something meaningful together.</p>
-        </div>
-
     </div>
 
-    <div class="footer-bottom">
-        © 2025 Sai Kumar Tandyala. All rights reserved.
+    <div class="hero-right">
+        <!-- Replace this div with your photo later -->
+        <div class="image-box"></div>
     </div>
-</footer>
+</section>
 
 </body>
 </html>
