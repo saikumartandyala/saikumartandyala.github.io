@@ -4,11 +4,18 @@
     <meta charset="UTF-8">
     <title>About | Sai Kumar Tandyala</title>
 
+    <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Poppins', sans-serif;
@@ -24,7 +31,10 @@
             align-items: center;
         }
 
-        .logo { font-size: 22px; font-weight: 600; }
+        .logo {
+            font-size: 22px;
+            font-weight: 600;
+        }
 
         nav ul {
             list-style: none;
@@ -37,6 +47,7 @@
             text-decoration: none;
             color: #cfcfe3;
             font-size: 14px;
+            font-weight: 500;
             padding: 6px 12px;
             border-radius: 6px;
         }
@@ -53,26 +64,26 @@
             color: #fff !important;
         }
 
-        /* ABOUT HEADER */
-        .about-header {
+        /* ABOUT SECTION */
+        .about-wrapper {
+            padding: 90px 20px;
             text-align: center;
-            padding: 80px 20px 40px;
         }
 
-        .about-header h1 {
+        .about-wrapper h1 {
             font-size: 42px;
             margin-bottom: 10px;
         }
 
-        .about-header p {
+        .about-wrapper p.subtitle {
             color: #d1d5db;
             font-size: 15px;
+            margin-bottom: 50px;
         }
 
-        /* ABOUT CARD */
         .about-card {
             max-width: 900px;
-            margin: 40px auto;
+            margin: auto;
             background: linear-gradient(180deg, #2a145a, #160b2f);
             padding: 40px;
             border-radius: 20px;
@@ -84,14 +95,15 @@
         }
 
         .about-card p {
-            color: #d1d5db;
-            line-height: 1.8;
-            margin-bottom: 25px;
             font-size: 15px;
+            line-height: 1.9;
+            color: #d1d5db;
+            margin-bottom: 20px;
         }
 
         .download-btn {
             display: inline-block;
+            margin-top: 20px;
             background: #8b5cf6;
             padding: 14px 30px;
             border-radius: 30px;
@@ -124,7 +136,7 @@
             font-size: 14px;
         }
 
-        /* FOOTER */
+        /* FOOTER (SAME AS HOME – NOT CHANGED) */
         .footer {
             background: radial-gradient(circle at top left, #2b0a3d, #0b0616);
             padding: 60px 40px 30px;
@@ -138,12 +150,43 @@
             gap: 40px;
         }
 
-        .footer h3 { margin-bottom: 15px; }
+        .footer h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
 
         .footer p {
             color: #b6b6c3;
             font-size: 14px;
             line-height: 1.6;
+        }
+
+        .footer-contact p {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer-contact i {
+            color: #a855f7;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .social-icons a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #1a1028;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #c4b5fd;
+            text-decoration: none;
         }
 
         .footer-bottom {
@@ -156,7 +199,9 @@
         }
 
         @media (max-width: 900px) {
-            .skills-grid { grid-template-columns: 1fr 1fr; }
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
     </style>
 </head>
@@ -175,27 +220,29 @@
     </nav>
 </header>
 
-<section class="about-header">
+<section class="about-wrapper">
     <h1>About Me</h1>
-    <p>Get to know more about me, my experience, and my professional strengths.</p>
-</section>
-
-<section class="about-card">
-    <h2>Hello, I'm Sai Kumar Tandyala</h2>
-    <p>
-        I am a management student with strong experience as a Business Process Analyst
-        in transaction monitoring and team management with strong expertise in data analysis,
-        reporting, and escalation handling.
-    </p>
-    <p>
-        Skilled in SQL, Power BI, and Excel for generating actionable insights and supporting
-        management decisions. Adept at managing teams, streamlining escalation processes,
-        and presenting performance insights to senior management.
+    <p class="subtitle">
+        Get to know more about me, my experience, and my professional strengths.
     </p>
 
-    <a href="Sai_Kumar_Tandyala_Resume.pdf" class="download-btn" download>
-        Download CV
-    </a>
+    <div class="about-card">
+        <h2>Hello, I'm Sai Kumar Tandyala</h2>
+        <p>
+            I am a management student with strong experience as a Business Process Analyst
+            in transaction monitoring and team management with strong expertise in data analysis,
+            reporting, and escalation handling.
+        </p>
+        <p>
+            Skilled in SQL, Power BI, and Excel for generating actionable insights and supporting
+            management decisions. Adept at managing teams, streamlining escalation processes,
+            and presenting performance insights to senior management.
+        </p>
+
+        <a href="Sai_Kumar_Tandyala_Resume.pdf" class="download-btn" download>
+            Download CV
+        </a>
+    </div>
 </section>
 
 <section class="skills">
@@ -216,19 +263,33 @@
 
 <footer class="footer">
     <div class="footer-container">
+
         <div>
             <h3>Sai Kumar Tandyala</h3>
-            <p>Data Analyst & Business Process Analyst</p>
+            <p>
+                Data Analyst specializing in SQL, Power BI, Tableau,
+                and data-driven business insights.
+            </p>
         </div>
-        <div>
+
+        <div class="footer-contact">
             <h3>Contact</h3>
-            <p>Email: your@email.com</p>
-            <p>India</p>
+            <p><i class="fa-solid fa-envelope"></i> your@email.com</p>
+            <p><i class="fa-solid fa-phone"></i> +91 XXXXXXXXXX</p>
+            <p><i class="fa-solid fa-location-dot"></i> India</p>
         </div>
+
         <div>
             <h3>Connect</h3>
-            <p>LinkedIn | Email</p>
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p>Let’s create something meaningful together.</p>
         </div>
+
     </div>
 
     <div class="footer-bottom">
