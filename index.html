@@ -125,19 +125,21 @@
             text-decoration: none;
         }
 
+        /* HERO IMAGE */
         .hero-right {
             display: flex;
             justify-content: center;
         }
 
-        .image-box {
+        .profile-image {
             width: 340px;
             height: 460px;
-            background: linear-gradient(180deg, #4c1d95, #1e1b4b);
             border-radius: 20px;
+            object-fit: cover;
+            background: linear-gradient(180deg, #4c1d95, #1e1b4b);
         }
 
-        /* FOOTER */
+        /* FOOTER (UNCHANGED) */
         .footer {
             background: radial-gradient(circle at top left, #2b0a3d, #0b0616);
             padding: 60px 40px 30px;
@@ -214,14 +216,10 @@
                 justify-content: center;
             }
 
-            .footer-container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-contact p,
-            .social-icons {
-                justify-content: center;
+            .profile-image {
+                width: 280px;
+                height: 380px;
+                margin-top: 30px;
             }
         }
     </style>
@@ -262,7 +260,7 @@
     </div>
 
     <div class="hero-right">
-        <div class="image-box"></div>
+        <img src="profile.jpg" alt="Sai Kumar Tandyala" class="profile-image">
     </div>
 </section>
 
