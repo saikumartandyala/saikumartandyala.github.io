@@ -13,34 +13,34 @@
 body{
     font-family:'Poppins',sans-serif;
     color:#fff;
-    background:
-        radial-gradient(circle at top left, rgba(139,92,246,.25), transparent 45%),
-        radial-gradient(circle at top right, rgba(88,28,135,.35), transparent 45%),
-        #0b0616;
     overflow-x:hidden;
+    background:
+        radial-gradient(circle at top left, rgba(139,92,246,0.25), transparent 45%),
+        radial-gradient(circle at top right, rgba(88,28,135,0.35), transparent 45%),
+        #0b0616;
 }
 
-/* ===== DECOR ===== */
+/* ========== DECOR ========== */
 .bg-blob{
     position:absolute;
     width:420px;height:420px;
-    background:radial-gradient(circle, rgba(139,92,246,.35), transparent 70%);
+    background:radial-gradient(circle, rgba(139,92,246,0.35), transparent 70%);
     filter:blur(90px);
     z-index:0;
 }
 .blob-1{top:-120px;left:-120px}
-.blob-2{top:120px;right:-160px}
+.blob-2{top:140px;right:-160px}
 
 .dot-cluster{
     position:absolute;
     width:180px;height:180px;
-    background-image:radial-gradient(rgba(255,255,255,.18) 1.4px, transparent 1.4px);
+    background-image:radial-gradient(rgba(255,255,255,0.18) 1.4px, transparent 1.4px);
     background-size:14px 14px;
-    opacity:.5;
+    opacity:.55;
     animation:floatDots 14s ease-in-out infinite;
 }
 .dots-1{top:260px;left:140px}
-.dots-2{top:420px;right:200px;animation-delay:5s}
+.dots-2{top:460px;right:200px;animation-delay:5s}
 
 @keyframes floatDots{
     0%{transform:translateY(0)}
@@ -48,7 +48,7 @@ body{
     100%{transform:translateY(0)}
 }
 
-/* ===== NAV ===== */
+/* ========== NAVBAR (SAME AS HOME) ========== */
 header{
     padding:24px 80px;
     display:flex;
@@ -60,8 +60,8 @@ header{
 .logo{font-size:22px;font-weight:600}
 nav ul{list-style:none;display:flex;gap:32px}
 nav a{
-    text-decoration:none;
     color:#cfcfe3;
+    text-decoration:none;
     font-size:14px;
     padding:6px 12px;
     border-radius:6px;
@@ -74,44 +74,44 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
     color:#fff!important;
 }
 
-/* ===== PAGE HEADER ===== */
+/* ========== PAGE HEADER ========== */
 .page-header{
     padding:90px 80px 40px;
     text-align:center;
     position:relative;
-    z-index:2;
+    z-index:1;
 }
 .page-header h1{
     font-size:48px;
     margin-bottom:10px;
 }
 .page-header p{
-    color:#d1d5db;
     font-size:15px;
+    color:#d1d5db;
 }
 
-/* ===== ABOUT CARD ===== */
+/* ========== ABOUT CARD (REFERENCE STYLE) ========== */
 .about-card{
-    max-width:900px;
+    max-width:920px;
     margin:50px auto 0;
-    background:linear-gradient(180deg, #1e1238, #120a24);
-    border-radius:20px;
-    padding:20px;
+    background:linear-gradient(180deg,#1e1238,#120a24);
+    border-radius:22px;
+    padding:42px;
     position:relative;
-    z-index:2;
+    z-index:1;
 }
 .about-card h2{
-    font-size:16px;
+    font-size:26px;
     margin-bottom:18px;
 }
 .about-card p{
-    color:#d1d5db;
-    line-height:1.9;
     font-size:15px;
+    line-height:1.9;
+    color:#d1d5db;
     margin-bottom:16px;
 }
 
-/* ===== DOWNLOAD ===== */
+/* Resume button */
 .download-btn{
     display:inline-flex;
     align-items:center;
@@ -125,9 +125,9 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
     font-size:14px;
 }
 
-/* ===== QUOTE ===== */
+/* Quote */
 .quote-box{
-    margin-top:40px;
+    margin-top:36px;
     padding:28px;
     border-radius:16px;
     background:#1a0f30;
@@ -136,18 +136,17 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
     color:#cfcfe3;
 }
 
-/* ===== SKILLS ===== */
+/* ========== SKILLS SECTION ========== */
 .skills-section{
     padding:80px 80px 40px;
     position:relative;
-    z-index:2;
+    z-index:1;
 }
 .skills-section h2{
     text-align:center;
     font-size:34px;
     margin-bottom:40px;
 }
-
 .skills-grid{
     display:grid;
     grid-template-columns:repeat(5,1fr);
@@ -166,7 +165,7 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
     box-shadow:0 16px 40px rgba(139,92,246,.25);
 }
 
-/* ===== FOOTER ===== */
+/* ========== FOOTER (SAME AS HOME) ========== */
 .footer{
     background:radial-gradient(circle at top left,#2b0a3d,#0b0616);
     padding:60px 40px 30px;
@@ -201,7 +200,7 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
     font-size:13px;
 }
 
-/* ===== ANIMATION ===== */
+/* ========== ANIMATIONS ========== */
 .reveal{
     opacity:0;
     transform:translateY(24px);
@@ -216,9 +215,9 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
 .delay-3{transition-delay:.45s}
 .delay-4{transition-delay:.6s}
 
-/* ===== MOBILE ===== */
+/* ========== MOBILE ========== */
 @media(max-width:900px){
-    header, .page-header, .skills-section{padding:60px 24px}
+    header,.page-header,.skills-section{padding:60px 24px}
     .skills-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
@@ -246,25 +245,27 @@ nav a.active{border:1px solid #8b5cf6;color:#fff}
 <section class="page-header">
 <h1 class="reveal delay-1">About Me</h1>
 <p class="reveal delay-2">
-Get to know more about me, my experience, and my professional strengths.
+Get to know more about my experience, skills, and professional journey.
 </p>
 </section>
 
 <section class="about-card reveal delay-2">
 <h2>Hello, I’m Sai Kumar</h2>
+
 <p>
-I am a management student with strong experience as a Business Process Analyst in
-transaction monitoring and team management, with strong expertise in data analysis,
-reporting, and escalation handling.
+I am a management student with strong experience as a
+<strong>Transaction Monitoring Analyst</strong> and Business Process Analyst,
+with expertise in transaction monitoring, reporting, and escalation handling.
 </p>
+
 <p>
-Skilled in SQL, Power BI, and Excel for generating actionable insights and supporting
-management decisions. Adept at managing teams, streamlining escalation processes,
-and presenting performance insights to senior management.
+Skilled in <strong>SQL, Power BI, and Excel</strong> for generating actionable
+insights and supporting management decisions. Adept at managing teams,
+streamlining escalation processes, and presenting insights to senior management.
 </p>
 
 <a href="Sai_Kumar_Tandyala_Resume.pdf" download class="download-btn">
-<i class="fa-solid fa-download"></i> Download CV
+<i class="fa-solid fa-download"></i> Download Resume
 </a>
 
 <div class="quote-box">
@@ -278,13 +279,13 @@ and presenting performance insights to senior management.
 <div class="skills-grid reveal delay-2">
 <div class="skill-card">SQL</div>
 <div class="skill-card">Power BI</div>
-<div class="skill-card">Advanced excel</div>
+<div class="skill-card">Excel</div>
 <div class="skill-card">Data Analysis</div>
-<div class="skill-card">KYC/AML Compliancel</div>
+<div class="skill-card">Reporting</div>
 <div class="skill-card">Transaction Monitoring</div>
 <div class="skill-card">Escalation Handling</div>
 <div class="skill-card">Team Management</div>
-<div class="skill-card">Customer handling skills </div>
+<div class="skill-card">Stakeholder Communication</div>
 <div class="skill-card">Process Improvement</div>
 </div>
 </section>
@@ -293,12 +294,12 @@ and presenting performance insights to senior management.
 <div class="footer-container">
 <div>
 <h3>Sai Kumar Tandyala</h3>
-<p>Transaction monitoring Analyst specializing in SQL, Power BI, Tableau.</p>
+<p>Transaction Monitoring Analyst specializing in SQL, Power BI, Tableau.</p>
 </div>
 <div class="footer-contact">
 <h3>Contact</h3>
-<p><i class="fa-solid fa-envelope"></i> your@email.com</p>
-<p><i class="fa-solid fa-phone"></i> +91 XXXXXXXXXX</p>
+<p><i class="fa-solid fa-envelope"></i> saikumartandyala8@email.com</p>
+<p><i class="fa-solid fa-phone"></i> +91 6281125607</p>
 <p><i class="fa-solid fa-location-dot"></i> India</p>
 </div>
 <div>
